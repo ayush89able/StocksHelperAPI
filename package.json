@@ -1,7 +1,7 @@
 {
   "name": "expense-helper-backend",
   "version": "1.0.0",
-  "description": "",
+  "description": "This is a stocks helper backend api",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
