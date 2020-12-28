@@ -1,6 +1,6 @@
 var express = require('express')
 const bodyParser = require("body-parser")
-const stockController = require("./controllers/StockController")
+const stockController = require("./Controllers/StockController")
 require('./config/db')
 var app = express()
 
