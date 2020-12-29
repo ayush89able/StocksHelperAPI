@@ -13,7 +13,7 @@ app.use(bodyParser.json());
 app
     .route("/")
     .get((req, res) => {
-        res.send("Please go to '/stocks' route")
+        res.send("Please go to '/stocks/broughtStocks' route for brought stock or '/stocks/soldStocks' route for sold stocks")
     })
 
 app
