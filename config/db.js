@@ -18,4 +18,5 @@ mongoose.connect(dbURI, options).then(
     }
 )
 
-require('../models/Stock')
+require('../models/BroughtStock')
+require('../models/SoldStock')

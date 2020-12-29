@@ -1,7 +1,7 @@
 const mongoose = require("mongoose")
 const Schema = mongoose.Schema
 
-const StockSchema = new Schema({
+const SoldStockSchema = new Schema({
     stockName: {
         type: String,
         required: true
@@ -32,4 +32,4 @@ const StockSchema = new Schema({
     }
 });
 
-module.exports = mongoose.model("Stock", StockSchema)
+module.exports = mongoose.model("SoldStocks", SoldStockSchema)

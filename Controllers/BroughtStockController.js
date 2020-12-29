@@ -1,7 +1,7 @@
-const Stock = require('../models/Stock')
+const BroughtStock = require('../models/BroughtStock')
 
-exports.listAllStocks = (req, res) => {
-    Stock.find({}, (err, stock) => {
+exports.listAllBroughtStocks = (req, res) => {
+    BroughtStock.find({}, (err, stock) => {
         if (err) {
             res.status(500).send(err)
         }
@@ -11,8 +11,8 @@ exports.listAllStocks = (req, res) => {
 
 
 exports.buyStock = (req, res) => {
-    let newStock = new Stock(req.body);
-    newStock.save((err, stock) => {
+    let newBroughtStock = new BroughtStock(req.body);
+    newBroughtStock.save((err, stock) => {
         if (err) {
             res.status(500).send(err)
         }
@@ -20,8 +20,8 @@ exports.buyStock = (req, res) => {
     });
 };
 
-exports.getStock = (req, res) => {
-    Stock.findById(req.params.stockid, (err, stock) => {
+exports.getBroughtStock = (req, res) => {
+    BroughtStock.findById(req.params.stockid, (err, stock) => {
         if (err) {
             res.status(500).send(err)
         }
@@ -29,8 +29,8 @@ exports.getStock = (req, res) => {
     })
 }
 
-exports.updateStock = (req, res) => {
-    Stock.findOneAndUpdate(
+exports.updateBroughtStock = (req, res) => {
+    BroughtStock.findOneAndUpdate(
         { _id: req.params.stockid },
         req.body,
         { new: true },
@@ -43,11 +43,11 @@ exports.updateStock = (req, res) => {
     )
 }
 
-exports.deleteStock = (req, res) => {
-    Stock.remove({ _id: req.params.stockid }, (err, stock) => {
+exports.deleteBroughtStock = (req, res) => {
+    BroughtStock.remove({ _id: req.params.stockid }, (err, stock) => {
         if (err) {
             res.status(404).send(err)
         }
-        res.status(200).json({ message: "Stock successfully deleted" })
+        res.status(200).json({ message: "Brought Stock successfully deleted" })
     })
 }
